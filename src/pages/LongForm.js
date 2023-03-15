@@ -143,6 +143,7 @@ const LongForm = () => {
         <div className="flex flex-col w-full max-w-xs">
           <label className="mb-3">Number of PCs</label>
           <div className="flex justify-between items-center gap-2 ">
+            {state.quantity > 0 ?             
             <button
               type="button"
               className="bg-indigo-500 text-lg text-white rounded h-10 w-10 "
@@ -150,6 +151,16 @@ const LongForm = () => {
             >
               -
             </button>
+            :
+            <button
+            disabled
+            type="button"
+            className="bg-gray-500 text-lg text-white rounded h-10 w-10 "
+            onClick={() => dispatch({ type: "DECREMENT" })}
+          >
+            -
+          </button>}
+
             <div className="border flex-1 flex justify-center items-center h-10 rounded-md border-gray-300">
               <span className="text-lg">{state.quantity}</span>
             </div>
